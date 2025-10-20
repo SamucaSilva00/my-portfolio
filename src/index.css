@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  --color-primary: #00df9d;
+  --color-secondary: #007d56;
+  --color-gray: #d9d9d9;
+
+  --font-baimj: "Bai Jamjuree", sans-serif;
+  --font-baumans: "Baumans", sans-serif;
+  --font-popp: "Poppins", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.font-baimj {
+  font-family: var(--font-baimj);
+}
+.font-baumans {
+  font-family: var(--font-baumans);
+}
+.font-popp {
+  font-family: var(--font-popp);
+}
+.font-roboto {
+  font-family: var(--font-roboto);
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-gray {
+  color: var(--color-gray);
+}
+
+.button-primary {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.button-secondary {
+  background-color: var(--color-primary);
+  color: white;
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.button-secondary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
