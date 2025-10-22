@@ -45,12 +45,12 @@ export default function Skills() {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 9,
     slidesToScroll: 1,
     swipeToSlide: true,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 1200,
     responsive: [
       { breakpoint: 1536, settings: { slidesToShow: 8 } },
       { breakpoint: 1280, settings: { slidesToShow: 6 } },
@@ -63,23 +63,27 @@ export default function Skills() {
   };
 
   const items = Object.entries(skills);
+
   return (
     <section className="w-full bg-black py-16 md:py-20">
-      <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 text-center">
-        <h2 className="font-baimj text-4xl md:text-5xl text-white leading-tight mb-10 md:mb-12">
+      <div className="mx-auto max-w-6xl w-full px-6 sm:px-8 text-center">
+        <h2 className="font-baimj text-4xl md:text-5xl text-white leading-tight mb-12">
           Habilidades
         </h2>
 
-        <Slider {...settings} className="skills-slider">
+        <Slider {...settings}>
           {items.map(([key, { Icon, label }]) => (
-            <div key={key} className="px-1 sm:px-2">
-              <div className="group flex flex-col items-center justify-center gap-2 py-6 h-40 overflow-visible">
+            <div
+              key={key}
+              className="px-2 sm:px-3 flex justify-center items-center"
+            >
+              <div className="group flex flex-col items-center justify-center gap-2 py-4 sm:py-6 h-32 sm:h-36 overflow-visible">
                 <Icon
                   aria-label={label}
                   title={label}
-                  className="text-5xl md:text-6xl lg:text-7xl text-primary transition-transform duration-300 group-hover:scale-125"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary transition-transform duration-300 group-hover:scale-125"
                 />
-                <span className="text-sm md:text-base text-white font-popp">
+                <span className="text-xs sm:text-sm md:text-base text-white font-popp">
                   {label}
                 </span>
               </div>
