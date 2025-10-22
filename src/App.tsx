@@ -1,6 +1,14 @@
-import Header from "./pages/Header";
 import "./index.css";
+import Header from "./pages/Header";
+import AboutMe from "./pages/AboutMe";
+import Skills from "./pages/Skills";
 
 export default function App() {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <AboutMe />
+      <Skills />
+    </>
+  );
 }

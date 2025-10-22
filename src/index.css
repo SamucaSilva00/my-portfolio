@@ -22,10 +22,40 @@
 html,
 body,
 #root {
-  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 body {
   margin: 0;
+  background-color: black;
+}
+.hero {
+  position: relative;
+  background: center / cover no-repeat url("../assets/bg.png");
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.25) 70%,
+    rgba(0, 0, 0, 0.55) 85%,
+    rgba(0, 0, 0, 0.85) 95%,
+    #000 100%
+  );
 }
 
 .font-baimj {

@@ -2,7 +2,13 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function SocialLinks() {
   return (
-    <div className="flex items-center flex-col gap-6">
+    <div
+      className="
+        flex items-center
+        gap-4 md:gap-5 lg:gap-4
+        flex-row lg:flex-col
+      "
+    >
       <a
         href="https://www.linkedin.com/in/samucasilva00/"
         target="_blank"
