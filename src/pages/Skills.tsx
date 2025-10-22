@@ -46,21 +46,16 @@ export default function Skills() {
     arrows: false,
     infinite: true,
     speed: 600,
-    slidesToShow: 9,
+    slidesToShow: 7,
     slidesToScroll: 1,
     swipeToSlide: true,
     autoplay: true,
-    autoplaySpeed: 1200,
+    autoplaySpeed: 1300,
     responsive: [
-      { breakpoint: 1536, settings: { slidesToShow: 8 } },
       { breakpoint: 1280, settings: { slidesToShow: 6 } },
       { breakpoint: 1024, settings: { slidesToShow: 5 } },
       { breakpoint: 900, settings: { slidesToShow: 4 } },
       { breakpoint: 768, settings: { slidesToShow: 4 } },
-      { breakpoint: 640, settings: { slidesToShow: 3 } },
-      { breakpoint: 480, settings: { slidesToShow: 3 } },
-      { breakpoint: 420, settings: { slidesToShow: 2 } },
-      { breakpoint: 380, settings: { slidesToShow: 2 } },
     ],
   };
 
@@ -68,30 +63,43 @@ export default function Skills() {
 
   return (
     <section className="w-full bg-black py-16 md:py-20">
-      <div className="mx-auto max-w-6xl w-full px-6 sm:px-8 text-center">
+      <div className="mx-auto max-w-7xl w-full px-6 sm:px-8 text-center">
         <h2 className="font-baimj text-4xl md:text-5xl text-white leading-tight mb-12">
           Habilidades
         </h2>
-
-        <Slider {...settings}>
+        <div className="hidden md:block">
+          <Slider {...settings}>
+            {items.map(([key, { Icon, label }]) => (
+              <div key={key} className="px-2 flex justify-center items-center">
+                <div className="group flex flex-col items-center justify-center gap-2 py-6 h-36">
+                  <Icon
+                    aria-label={label}
+                    title={label}
+                    className="text-5xl lg:text-6xl xl:text-7xl text-primary transition-transform duration-300 group-hover:scale-125"
+                  />
+                  <span className="text-sm md:text-base text-white font-popp">
+                    {label}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+        <div className="grid grid-cols-3 gap-6 md:hidden">
           {items.map(([key, { Icon, label }]) => (
             <div
               key={key}
-              className="px-2 sm:px-3 flex justify-center items-center"
+              className="flex flex-col items-center justify-center gap-2"
             >
-              <div className="group flex flex-col items-center justify-center gap-2 py-4 sm:py-6 h-32 sm:h-36 overflow-visible">
-                <Icon
-                  aria-label={label}
-                  title={label}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary transition-transform duration-300 group-hover:scale-125"
-                />
-                <span className="text-xs sm:text-sm md:text-base text-white font-popp">
-                  {label}
-                </span>
-              </div>
+              <Icon
+                aria-label={label}
+                title={label}
+                className="text-4xl text-primary"
+              />
+              <span className="text-xs text-white font-popp">{label}</span>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
     </section>
   );
