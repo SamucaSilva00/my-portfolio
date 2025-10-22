@@ -59,6 +59,8 @@ export default function Skills() {
       { breakpoint: 768, settings: { slidesToShow: 4 } },
       { breakpoint: 640, settings: { slidesToShow: 3 } },
       { breakpoint: 480, settings: { slidesToShow: 3 } },
+      { breakpoint: 420, settings: { slidesToShow: 2 } },
+      { breakpoint: 380, settings: { slidesToShow: 2 } },
     ],
   };
 
