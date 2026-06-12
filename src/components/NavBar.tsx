@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 
 const navLinks = [
   { href: "#about", key: "about" },
+  { href: "#experience", key: "experience" },
   { href: "#skills", key: "skills" },
   { href: "#projects", key: "projects" },
 ] as const;

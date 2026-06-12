@@ -1,101 +1,126 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider, { type Settings } from "react-slick";
 import {
   FaCss3Alt,
+  FaDocker,
+  FaGitAlt,
   FaHtml5,
   FaJsSquare,
-  FaReact,
   FaNodeJs,
-  FaGitAlt,
-  FaDocker,
+  FaReact,
 } from "react-icons/fa";
 import {
+  SiExpo,
+  SiExpress,
+  SiFastify,
   SiJest,
+  SiMongodb,
   SiMysql,
+  SiNextdotjs,
   SiPostgresql,
+  SiPrisma,
+  SiReact,
   SiSequelize,
   SiTypescript,
 } from "react-icons/si";
+import { useTranslation } from "react-i18next";
 import type { IconType } from "react-icons";
 
-type Skill = {
-  Icon: IconType;
-  label: string;
+type SkillItem = {
+  id: string;
+  name: string;
 };
 
-const skills: Record<string, Skill> = {
-  html: { Icon: FaHtml5, label: "HTML5" },
-  css: { Icon: FaCss3Alt, label: "CSS3" },
-  js: { Icon: FaJsSquare, label: "JavaScript" },
-  react: { Icon: FaReact, label: "React" },
-  node: { Icon: FaNodeJs, label: "Node.js" },
-  ts: { Icon: SiTypescript, label: "TypeScript" },
-  postgres: { Icon: SiPostgresql, label: "PostgreSQL" },
-  mysql: { Icon: SiMysql, label: "MySQL" },
-  sequelize: { Icon: SiSequelize, label: "Sequelize" },
-  git: { Icon: FaGitAlt, label: "Git" },
-  jest: { Icon: SiJest, label: "Jest" },
-  docker: { Icon: FaDocker, label: "Docker" },
+type SkillCategory = {
+  key: string;
+  label: string;
+  items: SkillItem[];
+};
+
+const skillIcons: Record<string, IconType> = {
+  html: FaHtml5,
+  css: FaCss3Alt,
+  javascript: FaJsSquare,
+  typescript: SiTypescript,
+  react: FaReact,
+  nextjs: SiNextdotjs,
+  reactNative: SiReact,
+  expo: SiExpo,
+  nodejs: FaNodeJs,
+  express: SiExpress,
+  fastify: SiFastify,
+  docker: FaDocker,
+  git: FaGitAlt,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+  mongodb: SiMongodb,
+  sequelize: SiSequelize,
+  prisma: SiPrisma,
+  jest: SiJest,
+};
+
+const skillColors: Record<string, string> = {
+  html: "#E34F26",
+  css: "#1572B6",
+  javascript: "#F7DF1E",
+  typescript: "#3178C6",
+  react: "#61DAFB",
+  nextjs: "#FFFFFF",
+  reactNative: "#61DAFB",
+  expo: "#FFFFFF",
+  nodejs: "#339933",
+  express: "#FFFFFF",
+  fastify: "#FFFFFF",
+  docker: "#2496ED",
+  git: "#F05032",
+  mysql: "#4479A1",
+  postgresql: "#4169E1",
+  mongodb: "#47A248",
+  sequelize: "#52B0E7",
+  prisma: "#71E8F2",
+  jest: "#C21325",
 };
 
 export default function Skills() {
-  const settings: Settings = {
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 7,
-    slidesToScroll: 1,
-    swipeToSlide: true,
-    autoplay: true,
-    autoplaySpeed: 1300,
-    responsive: [
-      { breakpoint: 1280, settings: { slidesToShow: 6 } },
-      { breakpoint: 1024, settings: { slidesToShow: 5 } },
-      { breakpoint: 900, settings: { slidesToShow: 4 } },
-      { breakpoint: 768, settings: { slidesToShow: 4 } },
-    ],
-  };
+  const { t } = useTranslation();
 
-  const items = Object.entries(skills);
+  const categories = t("skills.categories", {
+    returnObjects: true,
+  }) as SkillCategory[];
 
   return (
-    <section id="skills" className="w-full bg-black py-16 md:py-20">
-      <div className="content-container text-center">
-        <h2 className="mb-12 font-baimj text-4xl leading-tight text-white md:text-5xl">
-          Habilidades
-        </h2>
-        <div className="hidden md:block">
-          <Slider {...settings}>
-            {items.map(([key, { Icon, label }]) => (
-              <div key={key} className="px-2 flex justify-center items-center">
-                <div className="group flex flex-col items-center justify-center gap-2 py-6 h-36">
-                  <Icon
-                    aria-label={label}
-                    title={label}
-                    className="text-5xl lg:text-6xl xl:text-7xl text-primary transition-transform duration-300 group-hover:scale-125"
-                  />
-                  <span className="text-sm md:text-base text-white font-popp">
-                    {label}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
-        <div className="grid grid-cols-3 gap-6 md:hidden">
-          {items.map(([key, { Icon, label }]) => (
-            <div
-              key={key}
-              className="flex flex-col items-center justify-center gap-2"
-            >
-              <Icon
-                aria-label={label}
-                title={label}
-                className="text-4xl text-primary"
-              />
-              <span className="text-xs text-white font-popp">{label}</span>
+    <section id="skills" className="w-full bg-black">
+      <div className="content-container pb-16 pt-4 md:pb-20 my-12 md:my-16">
+        <h2 className="section-title">{t("skills.title")}</h2>
+
+        <div className="skills-categories">
+          {categories.map((category) => (
+            <div key={category.key} className="skills-category">
+              <h3 className="skills-category__label">{category.label}</h3>
+              <ul className="skills-grid">
+                {category.items.map((item) => {
+                  const Icon = skillIcons[item.id];
+                  const color = skillColors[item.id] ?? "var(--color-primary)";
+
+                  return (
+                    <li key={item.id}>
+                      <div className="skill-card">
+                        {Icon ? (
+                          <Icon
+                            className="skill-card__icon"
+                            style={{ color }}
+                            aria-hidden="true"
+                          />
+                        ) : (
+                          <span
+                            className="skill-card__icon skill-card__icon--fallback"
+                            aria-hidden="true"
+                          />
+                        )}
+                        <span className="skill-card__name">{item.name}</span>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           ))}
         </div>

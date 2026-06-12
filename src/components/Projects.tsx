@@ -1,142 +1,83 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider, { type Settings } from "react-slick";
-import { SiExpress, SiSequelize } from "react-icons/si";
-import {
-  FaGithub,
-  FaExternalLinkAlt,
-  FaReact,
-  FaBootstrap,
-  FaSass,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-} from "react-icons/fa";
-import type { IconType } from "react-icons";
-import { RiNextjsFill } from "react-icons/ri";
-import { MdAdminPanelSettings } from "react-icons/md";
-import { NextArrow, PrevArrow } from "./Arrows";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import oneBitFlixImage from "../assets/one-bit-flix.png";
 
-type Project = {
+type ProjectItem = {
+  id: string;
   title: string;
   description: string;
-  image: string;
-  technologies: { Icon: IconType; label: string }[];
-  github: string;
-  preview: string;
+  image?: string;
+  url: string;
+  github?: string;
+  tags: string[];
 };
 
-const projects: Project[] = [
-  {
-    title: "Lixo Certo",
-    description:
-      "Projeto acadêmico desenvolvido com o objetivo de conscientizar a população sobre o descarte correto do lixo, em alinhamento com a ODS 11 — Cidades e Comunidades Sustentáveis. O site permite localizar Ecopontos próximos e apresenta informações educativas sobre os impactos ambientais do descarte irregular, incentivando práticas sustentáveis e a preservação do meio ambiente na comunidade.",
-    image:
-      "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1313",
-    github: "https://github.com/SamucaSilva00/lixo-certo",
-    preview: "https://lixo-certo.vercel.app/",
-    technologies: [
-      { Icon: FaHtml5, label: "HTML5" },
-      { Icon: FaCss3Alt, label: "CSS3" },
-      { Icon: FaJsSquare, label: "JavaScript" },
-    ],
-  },
-  {
-    title: "OneBitFlix",
-    description:
-      "Projeto final do meu curso na OneBitCode. O OneBitFlix é uma aplicação inspirada na Netflix, desenvolvida com foco em aprendizado e boas práticas de desenvolvimento web. Ele permite a reprodução de vídeos, gerenciamento de usuários e exibição de catálogos de filmes e séries, simulando a experiência de uma plataforma de streaming real.",
-    image:
-      "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&q=80&w=1600",
-    github: "https://github.com/SamucaSilva00/onebitflix_front-end",
-    preview: "https://onebitflix-thiago.vercel.app/",
-    technologies: [
-      { Icon: FaReact, label: "React" },
-      { Icon: RiNextjsFill, label: "Next.js" },
-      { Icon: FaBootstrap, label: "Bootstrap" },
-      { Icon: FaSass, label: "Sass" },
-      { Icon: FaNodeJs, label: "Node.js" },
-      { Icon: SiExpress, label: "Express" },
-      { Icon: SiSequelize, label: "Sequelize" },
-      { Icon: MdAdminPanelSettings, label: "AdminJS" },
-    ],
-  },
-];
+const projectImages: Record<string, string> = {
+  onebitflix: oneBitFlixImage,
+};
 
 export default function Projects() {
-  const settings: Settings = {
-    dots: true,
-    infinite: true,
-    speed: 700,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  };
+  const { t } = useTranslation();
+
+  const items = t("projects.items", {
+    returnObjects: true,
+  }) as ProjectItem[];
 
   return (
-    <section id="projects" className="w-full bg-black text-white overflow-hidden relative">
-      <Slider {...settings}>
-        {projects.map((project, index) => (
-          <div key={index} className="relative w-full h-[70vh] md:h-[65vh]">
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${project.image})` }}
-            />
+    <section id="projects" className="w-full bg-black">
+      <div className="content-container pb-16 pt-4 md:pb-20 my-12 md:my-16">
+        <h2 className="section-title">{t("projects.title")}</h2>
 
-            <div className="absolute inset-0 bg-black/45 md:bg-black/35 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+        <div className="projects-grid">
+          {items.map((project) => (
+            <article key={project.id} className="project-card">
+              <img
+                src={projectImages[project.id] ?? project.image}
+                alt={project.title}
+                className="project-card__image"
+                loading="lazy"
+              />
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-              <h2 className="text-4xl md:text-5xl font-baimj mb-5 drop-shadow-lg">
-                {project.title}
-              </h2>
+              <div className="project-card__body">
+                <h3 className="project-card__title">{project.title}</h3>
+                <p className="project-card__description">{project.description}</p>
 
-              <p className="text-gray-300 text-base md:text-lg mb-7 leading-relaxed max-w-2xl">
-                {project.description}
-              </p>
-              <div className="my-4 flex justify-center lg:justify-start gap-3">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button-primary inline-flex items-center gap-2 group"
-                  aria-label="Abrir repositório no GitHub"
-                >
-                  <FaGithub className="text-[18px] transition-transform group-hover:-translate-y-px group-hover:translate-x-0.5" />
-                  GitHub
-                </a>
+                <div className="project-card__tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="project-card__tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-                <a
-                  href={project.preview}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button-secondary inline-flex items-center gap-2 group"
-                  aria-label="Abrir preview do projeto"
-                >
-                  <FaExternalLinkAlt className="text-[16px] transition-transform group-hover:-translate-y-px group-hover:translate-x-0.5" />
-                  Preview
-                </a>
-              </div>
-              <div className="flex flex-wrap justify-center gap-10 mt-3">
-                {project.technologies.map(({ Icon, label }, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col items-center justify-center gap-2"
+                <div className="project-card__actions">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-card__link"
                   >
-                    <Icon className="text-3xl md:text-4xl text-primary" />
-                    <span className="text-xs md:text-sm">{label}</span>
-                  </div>
-                ))}
+                    {t("projects.viewProject")}
+                    <FaExternalLinkAlt aria-hidden="true" />
+                  </a>
+
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-card__link"
+                    >
+                      {t("projects.viewCode")}
+                      <FaGithub aria-hidden="true" />
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </Slider>
+            </article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 {
   "nav": {
     "about": "Sobre",
+    "experience": "Experiência",
     "skills": "Habilidades",
     "projects": "Projetos",
     "toggleLanguage": "Mudar idioma para inglês"
@@ -94,6 +95,82 @@
         "company": "Senac São Paulo",
         "location": "São Paulo, SP - Presencial",
         "period": "Fev 2021 - Ago 2022"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades",
+    "categories": [
+      {
+        "key": "frontend",
+        "label": "Frontend",
+        "items": [
+          { "id": "html", "name": "HTML" },
+          { "id": "css", "name": "CSS" },
+          { "id": "javascript", "name": "JavaScript" },
+          { "id": "typescript", "name": "TypeScript" },
+          { "id": "react", "name": "React" },
+          { "id": "nextjs", "name": "Next.js" },
+          { "id": "reactNative", "name": "React Native" },
+          { "id": "expo", "name": "Expo" }
+        ]
+      },
+      {
+        "key": "backend",
+        "label": "Backend",
+        "items": [
+          { "id": "nodejs", "name": "Node.js" },
+          { "id": "express", "name": "Express" },
+          { "id": "fastify", "name": "Fastify" }
+        ]
+      },
+      {
+        "key": "infra",
+        "label": "Infra & DevOps",
+        "items": [
+          { "id": "docker", "name": "Docker" },
+          { "id": "git", "name": "Git" }
+        ]
+      },
+      {
+        "key": "database",
+        "label": "Banco de Dados",
+        "items": [
+          { "id": "mysql", "name": "MySQL" },
+          { "id": "postgresql", "name": "PostgreSQL" },
+          { "id": "mongodb", "name": "MongoDB" },
+          { "id": "sequelize", "name": "Sequelize" },
+          { "id": "prisma", "name": "Prisma" }
+        ]
+      },
+      {
+        "key": "testing",
+        "label": "Testes",
+        "items": [{ "id": "jest", "name": "Jest" }]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projetos",
+    "viewProject": "Ver projeto",
+    "viewCode": "Ver código",
+    "items": [
+      {
+        "id": "lixo-certo",
+        "title": "Lixo Certo",
+        "description": "Site para conscientizar sobre o descarte correto do lixo, com localização de Ecopontos e conteúdo educativo alinhado à ODS 11.",
+        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1313",
+        "url": "https://lixo-certo.vercel.app/",
+        "github": "https://github.com/SamucaSilva00/lixo-certo",
+        "tags": ["HTML", "CSS", "JavaScript"]
+      },
+      {
+        "id": "onebitflix",
+        "title": "OneBitFlix",
+        "description": "Plataforma inspirada na Netflix com catálogo de filmes e séries, reprodução de vídeos e painel administrativo.",
+        "url": "https://onebitflix-thiago.vercel.app/",
+        "github": "https://github.com/SamucaSilva00/onebitflix_front-end",
+        "tags": ["React", "Next.js", "Node.js", "Express", "Sequelize"]
       }
     ]
   }
