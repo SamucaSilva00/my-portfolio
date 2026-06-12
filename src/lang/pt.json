@@ -30,5 +30,71 @@
     },
     "paragraph1": "Sou <strong>Desenvolvedor Full-Stack</strong> com experiência prática na criação de soluções escaláveis e bem estruturadas. Aplico padrões como <strong>Atomic Design</strong> e <strong>Clean Architecture</strong> para construir aplicações robustas e de fácil manutenção.",
     "paragraph2": "Atualmente curso o <strong>4º semestre</strong> de ADS, com foco em boas práticas de <strong>UI/UX</strong> e qualidade de código. Busco evoluir continuamente para entregar software limpo, eficiente e de alto impacto."
+  },
+  "experience": {
+    "title": "Experiência",
+    "educationLabel": "Formação",
+    "showMore": "Ver mais",
+    "showLess": "Ver menos",
+    "items": [
+      {
+        "type": "work",
+        "title": "Desenvolvedor Full Stack",
+        "company": "Suzano S.A.",
+        "location": "São Paulo, SP - Remoto",
+        "period": "Out 2024 - Presente",
+        "bullets": [
+          "Desenvolvimento de aplicações web full stack com React, Node.js e TypeScript.",
+          "Construção de APIs REST escaláveis no back-end com Clean Architecture e DDD.",
+          "Front-end estruturado com Atomic Design para componentes reutilizáveis e consistentes."
+        ],
+        "tags": ["React", "TypeScript", "JavaScript", "Node.js", "Express", "MySQL", "Docker", "Jest"]
+      },
+      {
+        "type": "work",
+        "title": "Desenvolvedor Mobile",
+        "company": "MAD Softworks",
+        "location": "Cotia, SP - Remoto",
+        "period": "Ago 2024 - Out 2024",
+        "bullets": [
+          "App mobile em React Native e Expo para trabalhadores do agro reportarem problemas no campo.",
+          "Interface simples, pensada para usuários com baixa literacia digital.",
+          "Dados salvos offline no dispositivo e enviados à central quando a internet voltava.",
+          "QR Code para login, integração com APIs e fluxo de autenticação otimizado."
+        ],
+        "tags": ["React Native", "Expo", "JavaScript", "AsyncStorage", "PostgreSQL"]
+      },
+      {
+        "type": "education",
+        "title": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        "company": "Unicsul Virtual",
+        "location": "São Paulo, SP - Remoto",
+        "period": "Jun 2023 - Presente"
+      },
+      {
+        "type": "education",
+        "title": "Curso de Tecnologia, Formação Full Stack JS",
+        "company": "OneBitCode",
+        "location": "Remoto",
+        "period": "2023 - Presente"
+      },
+      {
+        "type": "education",
+        "title": "Cisco IT Essentials",
+        "company": "Cisco Networking Academy",
+        "location": "Remoto",
+        "period": "Fev 2021 - Jul 2022",
+        "bullets": [
+          "Nota acima de 75% no curso, com concessão da carta de mérito da Cisco."
+        ]
+      },
+      {
+        "type": "education",
+        "title": "Tecnico em Informática",
+        "company": "Senac São Paulo",
+        "location": "São Paulo, SP - Presencial",
+        "period": "Fev 2021 - Ago 2022"
+      }
+    ]
   }
 }

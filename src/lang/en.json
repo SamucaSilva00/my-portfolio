@@ -29,6 +29,72 @@
       }
     },
     "paragraph1": "I'm a <strong>Full-Stack Developer</strong> with hands-on experience building scalable, well-structured solutions. I apply patterns like <strong>Atomic Design</strong> and <strong>Clean Architecture</strong> to build robust, maintainable applications.",
-    "paragraph2": "I'm currently in my <strong>4rd semester</strong> of Software Analysis and Development, focused on <strong>UI/UX</strong> best practices and code quality. I'm always looking to grow and deliver clean, efficient, high-impact software."
+    "paragraph2": "I'm currently in my <strong>4th semester</strong> of Software Analysis and Development, focused on <strong>UI/UX</strong> best practices and code quality. I'm always looking to grow and deliver clean, efficient, high-impact software."
+  },
+  "experience": {
+    "title": "Experience",
+    "educationLabel": "Education",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "items": [
+      {
+        "type": "work",
+        "title": "Full Stack Developer",
+        "company": "Suzano S.A.",
+        "location": "São Paulo, SP - Remote",
+        "period": "Oct 2024 - Present",
+        "bullets": [
+          "Full stack web development with React, Node.js, and TypeScript.",
+          "Scalable REST APIs on the back-end with Clean Architecture and DDD.",
+          "Front-end structured with Atomic Design for reusable, consistent components."
+        ],
+        "tags": ["React", "TypeScript", "JavaScript", "Node.js", "Express", "MySQL", "Docker", "Jest"]
+      },
+      {
+        "type": "work",
+        "title": "Mobile Developer",
+        "company": "MAD Softworks",
+        "location": "Cotia, SP - Remote",
+        "period": "Aug 2024 - Oct 2024",
+        "bullets": [
+          "Mobile app with React Native and Expo for farm workers to report issues in the field.",
+          "Simple interface designed for users with low digital literacy.",
+          "Data saved offline on the device and sent to headquarters when internet returned.",
+          "QR Code login, API integration, and optimized authentication flow."
+        ],
+        "tags": ["React Native", "Expo", "JavaScript", "AsyncStorage", "PostgreSQL"]
+      },
+      {
+        "type": "education",
+        "title": "Technologist in Systems Analysis and Development",
+        "company": "Unicsul Virtual",
+        "location": "São Paulo, SP - Remote",
+        "period": "Jun 2023 - Present"
+      },
+      {
+        "type": "education",
+        "title": "Technology Course, Full Stack JS Training",
+        "company": "OneBitCode",
+        "location": "Remote",
+        "period": "2023 - Present"
+      },
+      {
+        "type": "education",
+        "title": "Cisco IT Essentials",
+        "company": "Cisco Networking Academy",
+        "location": "Remote",
+        "period": "Feb 2021 - Jul 2022",
+        "bullets": [
+          "Score above 75% in the course, earning the Cisco merit letter."
+        ]
+      },
+      {
+        "type": "education",
+        "title": "IT Technician",
+        "company": "Senac São Paulo",
+        "location": "São Paulo, SP - On-site",
+        "period": "Feb 2021 - Aug 2022"
+      }
+    ]
   }
 }
