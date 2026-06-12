@@ -1,55 +1,51 @@
+import { useTranslation } from "react-i18next";
 import bg from "../assets/bg.png";
-import vectorImage from "../assets/vector.png";
+import photo from "../assets/me-photo.jpg";
 import "../index.css";
-import AnimatedText from "../components/AnimatedText";
-import SocialLinks from "../components/SocialLinks";
+import AnimatedText from "./AnimatedText";
+import SocialLinks from "./SocialLinks";
 
-export default function Header() {
+export default function Home() {
+  const { t } = useTranslation();
+
   return (
     <div
+      id="home"
       className="hero min-h-screen w-full bg-cover bg-center bg-no-repeat text-white flex items-center justify-center"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div
-        className="mx-auto max-w-6xl px-6 py-8 md:py-10
+        className="content-container py-8 md:py-10
                  flex flex-col lg:grid lg:grid-cols-[auto_1fr_auto]
                  items-center lg:items-center justify-center
                  gap-4 sm:gap-6 md:gap-8 lg:gap-6
                  text-center lg:text-left"
       >
-        {/* Social Links */}
         <div className="flex justify-center md:justify-start mb-4 md:mb-0 md:mr-4">
           <SocialLinks />
         </div>
 
-        {/* Texto */}
         <div className="max-w-xl mx-auto lg:mx-0">
-          <p className="text-sm md:text-lg font-popp mb-1">
-            Seja bem-vindo! Me chamo
-          </p>
+          <p className="text-sm md:text-lg font-popp mb-1">{t("home.welcome")}</p>
           <h1 className="text-4xl md:text-5xl font-baimj text-white leading-tight mb-1">
             Samuel Rodrigues
           </h1>
-          <AnimatedText text="FullStack Developer" />
+          <AnimatedText text={t("home.role")} />
           <div className="mt-4 flex justify-center lg:justify-start gap-3">
             <a className="button-primary" target="_blank" href="/samuel_cv.pdf">
-              Download CV
+              {t("home.downloadCv")}
             </a>
-            <a className="button-secondary" href="#contato">
-              Fale Comigo
+            <a className="button-secondary" href="#contact">
+              {t("home.contactMe")}
             </a>
           </div>
         </div>
 
-        {/* Imagem */}
         <div className="justify-self-end flex justify-center lg:justify-end mb-2 lg:mb-0">
           <img
-            src={vectorImage}
-            alt="Vector image"
-            className="
-              sm:w-[300px] md:w-[400px] lg:w-[460px]
-              h-auto max-w-full
-            "
+            src={photo}
+            alt={t("home.photoAlt")}
+            className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[336px] lg:h-[336px] rounded-full object-cover border border-white/70 shadow-lg"
           />
         </div>
       </div>

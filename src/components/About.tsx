@@ -1,17 +1,11 @@
 import "../index.css";
 import photo from "../assets/me.jpg";
 
-export default function AboutMe() {
+export default function About() {
   return (
-    <section className="w-full -mt-10 bg-black">
+    <section id="about" className="w-full -mt-10 bg-black">
       <div
-        className="
-      mx-auto max-w-5xl px-6
-      py-12 md:py-16
-      flex flex-col md:flex-row
-      items-center md:items-end
-      justify-center gap-8 md:gap-12
-    "
+        className="content-container py-12 md:py-16 flex flex-col md:flex-row items-center md:items-end justify-center gap-8 md:gap-12"
       >
         <div className="flex justify-center md:justify-end flex-shrink-0">
           <img

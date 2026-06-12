@@ -62,8 +62,8 @@ export default function Skills() {
   const items = Object.entries(skills);
 
   return (
-    <section className="w-full bg-black py-16 md:py-20">
-      <div className="mx-auto max-w-7xl w-full px-6 sm:px-8 text-center">
+    <section id="skills" className="w-full bg-black py-16 md:py-20">
+      <div className="content-container text-center">
         <h2 className="font-baimj text-4xl md:text-5xl text-white leading-tight mb-12">
           Habilidades
         </h2>

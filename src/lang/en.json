@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "toggleLanguage": "Switch language to Portuguese"
+  },
+  "home": {
+    "welcome": "Welcome! My name is",
+    "role": "Full Stack Developer",
+    "downloadCv": "Download CV",
+    "contactMe": "Get in Touch",
+    "photoAlt": "Photo of Samuel Rodrigues"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "toggleLanguage": "Mudar idioma para inglês"
+  },
+  "home": {
+    "welcome": "Seja bem-vindo! Me chamo",
+    "role": "Desenvolvedor Full Stack",
+    "downloadCv": "Download CV",
+    "contactMe": "Fale Comigo",
+    "photoAlt": "Foto de Samuel Rodrigues"
+  }
+}
