@@ -159,7 +159,6 @@
         "id": "lixo-certo",
         "title": "Lixo Certo",
         "description": "Website to raise awareness about proper waste disposal, with nearby drop-off point locations and educational content aligned with SDG 11.",
-        "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=1313",
         "url": "https://lixo-certo.vercel.app/",
         "github": "https://github.com/SamucaSilva00/lixo-certo",
         "tags": ["HTML", "CSS", "JavaScript"]

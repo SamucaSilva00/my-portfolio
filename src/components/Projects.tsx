@@ -1,5 +1,6 @@
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import lixoCertoImage from "../assets/lixo-certo.png";
 import oneBitFlixImage from "../assets/one-bit-flix.png";
 
 type ProjectItem = {
@@ -13,6 +14,7 @@ type ProjectItem = {
 };
 
 const projectImages: Record<string, string> = {
+  "lixo-certo": lixoCertoImage,
   onebitflix: oneBitFlixImage,
 };
 
