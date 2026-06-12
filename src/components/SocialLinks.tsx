@@ -1,22 +1,22 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
+const socialLinkClass =
+  "text-primary transition-colors duration-300 hover:text-white";
+
+const iconClass =
+  "text-3xl transition-transform duration-300 hover:scale-125 md:text-4xl";
+
 export default function SocialLinks() {
   return (
-    <div
-      className="
-        flex items-center
-        gap-4 md:gap-5 lg:gap-4
-        flex-row lg:flex-col
-      "
-    >
+    <div className="flex flex-row items-center gap-4 md:gap-5 lg:flex-col lg:gap-4">
       <a
         href="https://www.linkedin.com/in/samucasilva00/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        className="text-primary hover:text-white transition-colors"
+        className={socialLinkClass}
       >
-        <FaLinkedin className="text-3xl md:text-4xl hover:scale-125 transition-transform duration-300" />
+        <FaLinkedin className={iconClass} />
       </a>
 
       <a
@@ -24,17 +24,17 @@ export default function SocialLinks() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub"
-        className="text-primary hover:text-white transition-colors"
+        className={socialLinkClass}
       >
-        <FaGithub className="text-3xl md:text-4xl hover:scale-125 transition-transform duration-300" />
+        <FaGithub className={iconClass} />
       </a>
 
       <a
         href="mailto:sammtecch@gmail.com"
         aria-label="Email"
-        className="text-primary hover:text-white transition-colors"
+        className={socialLinkClass}
       >
-        <FaEnvelope className="text-3xl md:text-4xl hover:scale-125 transition-transform duration-300" />
+        <FaEnvelope className={iconClass} />
       </a>
     </div>
   );

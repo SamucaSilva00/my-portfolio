@@ -1,6 +1,5 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../index.css";
 import Slider, { type Settings } from "react-slick";
 import { SiExpress, SiSequelize } from "react-icons/si";
 import {

@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import bg from "../assets/bg.png";
 import photo from "../assets/me-photo.jpg";
-import "../index.css";
 import AnimatedText from "./AnimatedText";
 import SocialLinks from "./SocialLinks";
 
@@ -11,28 +10,27 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="hero min-h-screen w-full bg-cover bg-center bg-no-repeat text-white flex items-center justify-center"
+      className="hero flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat text-white"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div
-        className="content-container relative z-10 py-8 md:py-10
-                 flex flex-col lg:grid lg:grid-cols-[auto_1fr_auto]
-                 items-center lg:items-center justify-center
-                 gap-4 sm:gap-6 md:gap-8 lg:gap-6
-                 text-center lg:text-left"
-      >
-        <div className="flex justify-center md:justify-start mb-4 md:mb-0 md:mr-4">
+      <div className="content-container relative z-10 flex flex-col items-center justify-center gap-4 py-8 text-center sm:gap-6 md:gap-8 md:py-10 lg:grid lg:grid-cols-[auto_1fr_auto] lg:items-center lg:gap-6 lg:text-left">
+        <div className="mb-4 flex justify-center md:mb-0 md:mr-4 md:justify-start">
           <SocialLinks />
         </div>
 
-        <div className="max-w-xl mx-auto lg:mx-0">
-          <p className="text-sm md:text-lg font-popp mb-1">{t("home.welcome")}</p>
-          <h1 className="text-4xl md:text-5xl font-baimj text-white leading-tight mb-1">
+        <div className="mx-auto max-w-xl lg:mx-0">
+          <p className="mb-1 font-popp text-sm md:text-lg">{t("home.welcome")}</p>
+          <h1 className="mb-1 font-baimj text-4xl leading-tight text-white md:text-5xl">
             Samuel Rodrigues
           </h1>
           <AnimatedText text={t("home.role")} />
-          <div className="mt-4 flex justify-center lg:justify-start gap-3">
-            <a className="button-primary" target="_blank" href="/samuel_cv.pdf">
+          <div className="mt-4 flex justify-center gap-3 lg:justify-start">
+            <a
+              className="button-primary"
+              target="_blank"
+              href="/samuel_cv.pdf"
+              rel="noopener noreferrer"
+            >
               {t("home.downloadCv")}
             </a>
             <a className="button-secondary" href="#contact">
@@ -41,11 +39,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="justify-self-end flex justify-center lg:justify-end mb-2 lg:mb-0">
+        <div className="mb-2 flex justify-center justify-self-end lg:mb-0 lg:justify-end">
           <img
             src={photo}
             alt={t("home.photoAlt")}
-            className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[336px] lg:h-[336px] rounded-full object-cover border border-white/70 shadow-lg"
+            className="h-60 w-60 rounded-full border border-white/70 object-cover shadow-lg sm:h-72 sm:w-72 md:h-80 md:w-80 lg:h-[336px] lg:w-[336px]"
           />
         </div>
       </div>

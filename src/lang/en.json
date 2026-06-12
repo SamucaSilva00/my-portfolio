@@ -11,5 +11,24 @@
     "downloadCv": "Download CV",
     "contactMe": "Get in Touch",
     "photoAlt": "Photo of Samuel Rodrigues"
+  },
+  "about": {
+    "title": "About me",
+    "cards": {
+      "experience": {
+        "label": "Experience",
+        "value": "+2 years"
+      },
+      "focus": {
+        "label": "Focus",
+        "value": "Full Stack"
+      },
+      "stack": {
+        "label": "Main stack",
+        "value": "React & Node.js"
+      }
+    },
+    "paragraph1": "I'm a <strong>Full-Stack Developer</strong> with hands-on experience building scalable, well-structured solutions. I apply patterns like <strong>Atomic Design</strong> and <strong>Clean Architecture</strong> to build robust, maintainable applications.",
+    "paragraph2": "I'm currently in my <strong>4rd semester</strong> of Software Analysis and Development, focused on <strong>UI/UX</strong> best practices and code quality. I'm always looking to grow and deliver clean, efficient, high-impact software."
   }
 }

@@ -1,0 +1,137 @@
+.content-container {
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@media (min-width: 640px) {
+  .content-container {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .content-container {
+    padding-inline: 3.5rem;
+  }
+}
+
+.button-primary {
+  cursor: pointer;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-primary);
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.button-primary:hover {
+  border-color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+.button-primary--compact {
+  border-width: 1px;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+}
+
+.button-secondary {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: white;
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-roboto);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.button-secondary:hover {
+  background-color: var(--color-tertiary);
+  border-color: var(--color-tertiary);
+  transform: scale(1.05);
+}
+
+.nav-link {
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-popp);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.about-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.75rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-baimj);
+  font-size: 1.875rem;
+  line-height: 1.25;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 2.25rem;
+  }
+}
+
+.about-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3rem;
+  height: 3px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+}
+
+.about-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1.25rem 1.5rem;
+}
+
+.about-card__label {
+  display: block;
+  font-family: var(--font-popp);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(217, 217, 217, 0.65);
+  margin-bottom: 0.5rem;
+}
+
+.about-card__value {
+  font-family: var(--font-baimj);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.about-text {
+  font-family: var(--font-popp);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgba(217, 217, 217, 0.85);
+}
+
+.about-text strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}

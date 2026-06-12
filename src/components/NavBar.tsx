@@ -27,25 +27,21 @@ export default function NavBar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-black backdrop-blur-sm border-b border-white/5"
-          : "bg-transparent border-b border-transparent"
+          ? "border-b border-white/5 bg-black backdrop-blur-sm"
+          : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="content-container py-4 flex items-center justify-between gap-4">
+      <div className="content-container flex items-center justify-between gap-4 py-4">
         <a
           href="#home"
-          className="font-baimj text-lg md:text-xl text-primary font-semibold whitespace-nowrap hover:opacity-80 transition-opacity"
+          className="whitespace-nowrap font-baimj text-lg font-semibold text-primary transition-opacity hover:opacity-80 md:text-xl"
         >
           Samuel Rodrigues
         </a>
 
         <div className="flex items-center gap-6 sm:gap-8 md:gap-10">
           {navLinks.map(({ href, key }) => (
-            <a
-              key={key}
-              href={href}
-              className="nav-link text-sm font-popp whitespace-nowrap"
-            >
+            <a key={key} href={href} className="nav-link">
               {t(`nav.${key}`)}
             </a>
           ))}

@@ -1,6 +1,5 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../index.css";
 import Slider, { type Settings } from "react-slick";
 import {
   FaCss3Alt,
@@ -64,7 +63,7 @@ export default function Skills() {
   return (
     <section id="skills" className="w-full bg-black py-16 md:py-20">
       <div className="content-container text-center">
-        <h2 className="font-baimj text-4xl md:text-5xl text-white leading-tight mb-12">
+        <h2 className="mb-12 font-baimj text-4xl leading-tight text-white md:text-5xl">
           Habilidades
         </h2>
         <div className="hidden md:block">

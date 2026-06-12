@@ -1,5 +1,4 @@
 import { TypeAnimation } from "react-type-animation";
-import "../index.css";
 import type { ComponentProps } from "react";
 
 type AnimatedTextProps = {

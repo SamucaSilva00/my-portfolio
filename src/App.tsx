@@ -1,4 +1,3 @@
-import "./index.css";
 import "./i18n";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";

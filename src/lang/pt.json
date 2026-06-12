@@ -11,5 +11,24 @@
     "downloadCv": "Download CV",
     "contactMe": "Fale Comigo",
     "photoAlt": "Foto de Samuel Rodrigues"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "cards": {
+      "experience": {
+        "label": "Experiência",
+        "value": "+2 anos"
+      },
+      "focus": {
+        "label": "Foco",
+        "value": "Full Stack"
+      },
+      "stack": {
+        "label": "Stack principal",
+        "value": "React & Node.js"
+      }
+    },
+    "paragraph1": "Sou <strong>Desenvolvedor Full-Stack</strong> com experiência prática na criação de soluções escaláveis e bem estruturadas. Aplico padrões como <strong>Atomic Design</strong> e <strong>Clean Architecture</strong> para construir aplicações robustas e de fácil manutenção.",
+    "paragraph2": "Atualmente curso o <strong>4º semestre</strong> de ADS, com foco em boas práticas de <strong>UI/UX</strong> e qualidade de código. Busco evoluir continuamente para entregar software limpo, eficiente e de alto impacto."
   }
 }
