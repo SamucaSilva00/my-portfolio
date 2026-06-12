@@ -44,7 +44,7 @@ export default function NavBar() {
             <a
               key={key}
               href={href}
-              className="text-gray text-sm font-popp hover:text-primary transition-colors whitespace-nowrap"
+              className="nav-link text-sm font-popp whitespace-nowrap"
             >
               {t(`nav.${key}`)}
             </a>

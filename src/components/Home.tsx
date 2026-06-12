@@ -15,7 +15,7 @@ export default function Home() {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div
-        className="content-container py-8 md:py-10
+        className="content-container relative z-10 py-8 md:py-10
                  flex flex-col lg:grid lg:grid-cols-[auto_1fr_auto]
                  items-center lg:items-center justify-center
                  gap-4 sm:gap-6 md:gap-8 lg:gap-6
