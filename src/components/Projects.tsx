@@ -24,9 +24,11 @@ export default function Projects() {
   }) as ProjectItem[];
 
   return (
-    <section id="projects" className="w-full bg-black">
+    <section className="w-full bg-black">
       <div className="content-container pb-16 pt-4 md:pb-20 my-12 md:my-16">
-        <h2 className="section-title">{t("projects.title")}</h2>
+        <h2 id="projects" className="section-title">
+          {t("projects.title")}
+        </h2>
 
         <div className="projects-grid">
           {items.map((project) => (

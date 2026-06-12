@@ -6,9 +6,11 @@ export default function About() {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="w-full bg-black">
+    <section className="w-full bg-black">
       <div className="content-container py-16 md:py-20 my-12 md:my-16">
-        <h2 className="about-title">{t("about.title")}</h2>
+        <h2 id="about" className="about-title">
+          {t("about.title")}
+        </h2>
 
         <div className="mb-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {cardKeys.map((key) => (

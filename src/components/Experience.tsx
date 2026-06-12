@@ -80,9 +80,11 @@ export default function Experience() {
   const educationLabel = t("experience.educationLabel");
 
   return (
-    <section id="experience" className="w-full bg-black">
-      <div className="content-container pb-16 pt-4 md:pb-20">
-        <h2 className="section-title">{t("experience.title")}</h2>
+    <section className="w-full bg-black">
+      <div className="content-container pb-16 pt-4 md:pb-20 my-12 md:my-16">
+        <h2 id="experience" className="section-title">
+          {t("experience.title")}
+        </h2>
 
         <div className="experience-timeline">
           {visibleItems.map((item) => (
