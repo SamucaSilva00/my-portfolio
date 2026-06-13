@@ -11,6 +11,7 @@ import {
   SiExpo,
   SiExpress,
   SiFastify,
+  SiGooglecloud,
   SiJest,
   SiMongodb,
   SiMysql,
@@ -21,8 +22,11 @@ import {
   SiSequelize,
   SiTypescript,
 } from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 import { useTranslation } from "react-i18next";
 import type { IconType } from "react-icons";
+import { useInView } from "../hooks/useInView";
+import { revealStyle } from "../lib/revealStyle";
 
 type SkillItem = {
   id: string;
@@ -49,6 +53,8 @@ const skillIcons: Record<string, IconType> = {
   fastify: SiFastify,
   docker: FaDocker,
   git: FaGitAlt,
+  gcp: SiGooglecloud,
+  azure: VscAzure,
   mysql: SiMysql,
   postgresql: SiPostgresql,
   mongodb: SiMongodb,
@@ -71,6 +77,8 @@ const skillColors: Record<string, string> = {
   fastify: "#FFFFFF",
   docker: "#2496ED",
   git: "#F05032",
+  gcp: "#4285F4",
+  azure: "#0078D4",
   mysql: "#4479A1",
   postgresql: "#4169E1",
   mongodb: "#47A248",
@@ -81,6 +89,7 @@ const skillColors: Record<string, string> = {
 
 export default function Skills() {
   const { t } = useTranslation();
+  const { ref, isInView } = useInView();
 
   const categories = t("skills.categories", {
     returnObjects: true,
@@ -88,14 +97,27 @@ export default function Skills() {
 
   return (
     <section className="w-full bg-black">
-      <div className="content-container pb-16 pt-4 md:pb-20 my-12 md:my-16">
-        <h2 id="skills" className="section-title">
+      <div
+        ref={ref}
+        className={`content-container pb-16 pt-4 md:pb-20 my-12 md:my-16${
+          isInView ? " section-visible" : ""
+        }`}
+      >
+        <h2
+          id="skills"
+          className="section-title section-reveal"
+          style={revealStyle(0)}
+        >
           {t("skills.title")}
         </h2>
 
         <div className="skills-categories">
-          {categories.map((category) => (
-            <div key={category.key} className="skills-category">
+          {categories.map((category, index) => (
+            <div
+              key={category.key}
+              className="skills-category section-reveal"
+              style={revealStyle(index + 1)}
+            >
               <h3 className="skills-category__label">{category.label}</h3>
               <ul className="skills-grid">
                 {category.items.map((item) => {

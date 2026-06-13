@@ -26,7 +26,7 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
         scrolled
           ? "border-b border-white/5 bg-black backdrop-blur-sm"
           : "border-b border-transparent bg-transparent"
@@ -35,7 +35,7 @@ export default function NavBar() {
       <div className="content-container flex items-center justify-between gap-4 py-4">
         <a
           href="#home"
-          className="whitespace-nowrap font-baimj text-lg font-semibold text-primary transition-opacity hover:opacity-80 md:text-xl"
+          className="whitespace-nowrap font-baimj text-lg font-semibold text-primary transition-opacity duration-500 ease-out hover:opacity-80 md:text-xl"
         >
           Samuel Rodrigues
         </a>

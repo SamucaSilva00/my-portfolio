@@ -1,6 +1,9 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import { useInView } from "../hooks/useInView";
+import { revealStyle } from "../lib/revealStyle";
 
 const VISIBLE_COUNT = 3;
 
@@ -17,14 +20,26 @@ type ExperienceItem = {
 type ExperienceItemCardProps = {
   item: ExperienceItem;
   educationLabel: string;
+  className?: string;
+  style?: CSSProperties;
+  reveal?: boolean;
 };
 
-function ExperienceItemCard({ item, educationLabel }: ExperienceItemCardProps) {
+function ExperienceItemCard({
+  item,
+  educationLabel,
+  className = "",
+  style,
+  reveal = true,
+}: ExperienceItemCardProps) {
   const isWork = item.type === "work";
   const Icon = isWork ? FaBriefcase : FaGraduationCap;
 
   return (
-    <article className="experience-item">
+    <article
+      className={`experience-item${reveal ? " section-reveal" : ""} ${className}`.trim()}
+      style={reveal ? style : undefined}
+    >
       <div className="experience-marker" aria-hidden="true">
         <Icon />
       </div>
@@ -69,6 +84,7 @@ function ExperienceItemCard({ item, educationLabel }: ExperienceItemCardProps) {
 export default function Experience() {
   const { t } = useTranslation();
   const [expanded, setExpanded] = useState(false);
+  const { ref, isInView } = useInView();
 
   const items = t("experience.items", {
     returnObjects: true,
@@ -81,17 +97,27 @@ export default function Experience() {
 
   return (
     <section className="w-full bg-black">
-      <div className="content-container pb-16 pt-4 md:pb-20 my-12 md:my-16">
-        <h2 id="experience" className="section-title">
+      <div
+        ref={ref}
+        className={`content-container pb-16 pt-4 md:pb-20 my-12 md:my-16${
+          isInView ? " section-visible" : ""
+        }`}
+      >
+        <h2
+          id="experience"
+          className="section-title section-reveal"
+          style={revealStyle(0)}
+        >
           {t("experience.title")}
         </h2>
 
         <div className="experience-timeline">
-          {visibleItems.map((item) => (
+          {visibleItems.map((item, index) => (
             <ExperienceItemCard
               key={`${item.type}-${item.title}-${item.period}`}
               item={item}
               educationLabel={educationLabel}
+              style={revealStyle(index + 1)}
             />
           ))}
 
@@ -105,6 +131,7 @@ export default function Experience() {
                     key={`${item.type}-${item.title}-${item.period}`}
                     item={item}
                     educationLabel={educationLabel}
+                    reveal={false}
                   />
                 ))}
               </div>
@@ -112,7 +139,10 @@ export default function Experience() {
           )}
 
           {hasMore && (
-            <div className="experience-item experience-toggle">
+            <div
+              className="experience-item experience-toggle section-reveal"
+              style={revealStyle(visibleItems.length + 1)}
+            >
               <div aria-hidden="true" />
               <button
                 type="button"

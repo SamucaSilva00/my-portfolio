@@ -129,7 +129,9 @@
         "label": "Infra & DevOps",
         "items": [
           { "id": "docker", "name": "Docker" },
-          { "id": "git", "name": "Git" }
+          { "id": "git", "name": "Git" },
+          { "id": "gcp", "name": "GCP" },
+          { "id": "azure", "name": "Azure" }
         ]
       },
       {
@@ -172,5 +174,10 @@
         "tags": ["React", "Next.js", "Node.js", "Express", "Sequelize"]
       }
     ]
+  },
+  "footer": {
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "copyright": "© {{year}} Samuel Rodrigues"
   }
 }

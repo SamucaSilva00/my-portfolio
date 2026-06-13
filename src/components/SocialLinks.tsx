@@ -1,10 +1,10 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const socialLinkClass =
-  "text-primary transition-colors duration-300 hover:text-white";
+  "text-primary transition-colors duration-500 ease-out hover:text-white";
 
 const iconClass =
-  "text-3xl transition-transform duration-300 hover:scale-125 md:text-4xl";
+  "text-3xl transition-transform duration-500 ease-out hover:scale-110 md:text-4xl";
 
 export default function SocialLinks() {
   return (
