@@ -4,7 +4,9 @@
     "experience": "Experiência",
     "skills": "Habilidades",
     "projects": "Projetos",
-    "toggleLanguage": "Mudar idioma para inglês"
+    "toggleLanguage": "Mudar idioma para inglês",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu"
   },
   "home": {
     "welcome": "Seja bem-vindo! Me chamo",

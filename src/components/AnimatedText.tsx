@@ -20,7 +20,7 @@ export default function AnimatedText({
       deletionSpeed={40}
       repeat={Infinity}
       cursor
-      className={`text-primary font-baumans text-[20px] xl:text-[30px] lg:text-2xl ${
+      className={`text-primary font-baumans text-2xl lg:text-3xl xl:text-[1.875rem] ${
         className ?? ""
       }`}
       {...rest}

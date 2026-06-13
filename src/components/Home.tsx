@@ -10,26 +10,26 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="hero flex min-h-screen w-full items-center justify-center bg-cover bg-center bg-no-repeat text-white"
+      className="hero flex min-h-screen w-full items-start justify-center bg-cover bg-center bg-no-repeat pt-[4.5rem] pb-8 text-white md:items-center md:pt-0 md:pb-0"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="content-container relative z-10 flex flex-col items-center justify-center gap-8 py-8 md:py-10 lg:grid lg:grid-cols-[1fr_auto] lg:items-center lg:gap-10">
-        <div className="flex w-full flex-col items-center gap-4 sm:gap-6 md:gap-8 lg:flex-row lg:items-center lg:gap-6 lg:text-left">
-          <div className="home-reveal home-reveal-delay-1 flex justify-center lg:justify-start">
+      <div className="content-container relative z-10 flex flex-col items-center justify-center gap-4 py-4 md:grid md:grid-cols-[1fr_auto] md:items-center md:gap-6 md:py-10 lg:gap-10 lg:py-14">
+        <div className="flex w-full flex-col items-center gap-4 md:flex-row md:items-center md:gap-6 md:text-left">
+          <div className="home-reveal home-reveal-delay-1 flex justify-center md:justify-start">
             <SocialLinks />
           </div>
 
-          <div className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
-            <p className="home-reveal home-reveal-delay-2 mb-1 font-popp text-sm md:text-lg">
+          <div className="w-full max-w-xl text-center md:max-w-none md:text-left">
+            <p className="home-reveal home-reveal-delay-2 mb-1 font-popp text-lg lg:text-xl">
               {t("home.welcome")}
             </p>
-            <h1 className="home-reveal home-reveal-delay-3 mb-1 font-baimj text-4xl leading-tight text-white md:text-5xl">
+            <h1 className="home-reveal home-reveal-delay-3 mb-1 font-baimj text-5xl leading-tight text-white lg:text-6xl">
               Samuel Rodrigues
             </h1>
             <div className="home-reveal home-reveal-delay-4">
               <AnimatedText text={t("home.role")} />
             </div>
-            <div className="home-reveal home-reveal-delay-5 mt-4 flex justify-center gap-3 lg:justify-start">
+            <div className="home-reveal home-reveal-delay-5 mt-4 flex flex-wrap justify-center gap-3 md:justify-start">
               <a
                 className="button-primary"
                 target="_blank"
@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="home-photo home-reveal-delay-6 flex justify-center lg:justify-end">
+        <div className="home-photo home-reveal-delay-6 flex justify-center md:justify-end">
           <img
             src={photo}
             alt={t("home.photoAlt")}

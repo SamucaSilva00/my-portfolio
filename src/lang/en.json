@@ -4,7 +4,9 @@
     "experience": "Experience",
     "skills": "Skills",
     "projects": "Projects",
-    "toggleLanguage": "Switch language to Portuguese"
+    "toggleLanguage": "Switch language to Portuguese",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
   },
   "home": {
     "welcome": "Welcome! My name is",
