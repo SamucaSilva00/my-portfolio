@@ -99,7 +99,7 @@ export default function Skills() {
     <section className="w-full bg-black">
       <div
         ref={ref}
-        className={`content-container pb-16 pt-4 md:pb-20 my-12 md:my-16${
+        className={`content-container my-12 pb-16 pt-4 md:my-16 md:pb-20${
           isInView ? " section-visible" : ""
         }`}
       >
@@ -111,35 +111,39 @@ export default function Skills() {
           {t("skills.title")}
         </h2>
 
-        <div className="skills-categories">
+        <div className="flex flex-col gap-10">
           {categories.map((category, index) => (
             <div
               key={category.key}
-              className="skills-category section-reveal"
+              className="section-reveal"
               style={revealStyle(index + 1)}
             >
-              <h3 className="skills-category__label">{category.label}</h3>
-              <ul className="skills-grid">
+              <h3 className="mb-4 font-popp text-[0.8125rem] font-semibold tracking-widest text-muted/55 uppercase">
+                {category.label}
+              </h3>
+              <ul className="m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(10.5rem,1fr))] gap-3 p-0 sm:grid-cols-[repeat(auto-fill,minmax(12.5rem,1fr))] sm:gap-3.5 lg:grid-cols-[repeat(auto-fill,minmax(13.5rem,1fr))]">
                 {category.items.map((item) => {
                   const Icon = skillIcons[item.id];
                   const color = skillColors[item.id] ?? "var(--color-primary)";
 
                   return (
                     <li key={item.id}>
-                      <div className="skill-card">
+                      <div className="flex h-full min-h-12 items-center gap-3 rounded-[0.625rem] border border-white/8 bg-white/[0.03] px-4 py-3 transition-[border-color,background-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/25 hover:bg-white/5 sm:min-h-[3.25rem] sm:gap-3.5 sm:px-[1.125rem] sm:py-3.5">
                         {Icon ? (
                           <Icon
-                            className="skill-card__icon"
+                            className="shrink-0 text-[1.375rem] sm:text-2xl"
                             style={{ color }}
                             aria-hidden="true"
                           />
                         ) : (
                           <span
-                            className="skill-card__icon skill-card__icon--fallback"
+                            className="size-[1.375rem] shrink-0 rounded bg-primary"
                             aria-hidden="true"
                           />
                         )}
-                        <span className="skill-card__name">{item.name}</span>
+                        <span className="truncate font-popp text-[0.9375rem] font-medium text-white sm:text-base">
+                          {item.name}
+                        </span>
                       </div>
                     </li>
                   );

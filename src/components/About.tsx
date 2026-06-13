@@ -12,13 +12,13 @@ export default function About() {
     <section className="w-full bg-black">
       <div
         ref={ref}
-        className={`content-container py-16 md:py-20 my-12 md:my-16${
+        className={`content-container my-12 py-16 md:my-16 md:py-20${
           isInView ? " section-visible" : ""
         }`}
       >
         <h2
           id="about"
-          className="about-title section-reveal"
+          className="section-title section-reveal"
           style={revealStyle(0)}
         >
           {t("about.title")}
@@ -28,13 +28,13 @@ export default function About() {
           {cardKeys.map((key, index) => (
             <div
               key={key}
-              className="about-card section-reveal"
+              className="section-reveal rounded-lg border border-white/8 bg-white/[0.03] px-6 py-5"
               style={revealStyle(index + 1)}
             >
-              <span className="about-card__label">
+              <span className="field-label mb-2 text-muted/65">
                 {t(`about.cards.${key}.label`)}
               </span>
-              <span className="about-card__value">
+              <span className="font-baimj text-lg font-semibold text-primary">
                 {t(`about.cards.${key}.value`)}
               </span>
             </div>
@@ -42,10 +42,16 @@ export default function About() {
         </div>
 
         <div className="max-w-3xl space-y-5">
-          <p className="about-text section-reveal" style={revealStyle(4)}>
+          <p
+            className="section-reveal font-popp text-lg leading-relaxed text-muted/85 [&_strong]:font-semibold [&_strong]:text-primary"
+            style={revealStyle(4)}
+          >
             <Trans i18nKey="about.paragraph1" />
           </p>
-          <p className="about-text section-reveal" style={revealStyle(5)}>
+          <p
+            className="section-reveal font-popp text-lg leading-relaxed text-muted/85 [&_strong]:font-semibold [&_strong]:text-primary"
+            style={revealStyle(5)}
+          >
             <Trans i18nKey="about.paragraph2" />
           </p>
         </div>
